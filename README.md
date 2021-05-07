@@ -23,7 +23,7 @@ Example usage for checking probe is picked up corectly
 ## ....
 activate_gcode:
   PROBE_PICKUP ## macro to pickup probe
-   PROBE_ATTACH_CHECK DETACHED="PROBE_ERROR_NOT_PICKED_UP"
+  PROBE_ATTACH_CHECK DETACHED="PROBE_ERROR_NOT_PICKED_UP"
 
 [gcode_macro PROBE_ERROR_NOT_PICKED_UP]
 gcode:
