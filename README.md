@@ -11,7 +11,7 @@ PROBE_ATTACH_CHECK ATTACHED="MACRO_1_NAME" DETACHED="MACRO_2_NAME"
 How it works
 1. check endstop status
 2. if endstop is not triggered then probe is mounted and runs macro from parameter (then stops)
-3. (if endstop is triggered) move up probe.sample_retract_dist
+3. (if endstop is triggered) move up [probe].sample_retract_dist mm (to check if probe is actually hitting something
 4. check endstops status again
 5. if endstop is triggered then probe is not mounted and run macro (then stop)
 6. if endstop is not triggered then probe is mounted and run macro (then stop)
