@@ -3,6 +3,8 @@
 Runs one of the two specified macros depending if the probe is mounted or not.
 This is intended to be used with a detachable probe (magnetic or manual) that is active (high) when disconnected or it hits something
 
+Dependency: https://github.com/vladbabii/klipper.macro.g28_override
+
 The probe can be
 * configured only in probe section
 * used as z endstop in stepper z section
