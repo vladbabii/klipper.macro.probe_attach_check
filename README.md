@@ -23,7 +23,7 @@ How it works
 6. if endstop is not triggered then probe is mounted and run macro (then stop)
 
 
-Example usage for checking probe is picked up corectly 
+Example usage for checking a manual probe is attached before probing...
 ```
 [probe]
 ## ....
@@ -33,5 +33,17 @@ activate_gcode:
 [gcode_macro PROBE_ERROR_NOT_PICKED_UP]
 gcode:
   RESPOND PREFIX="error" MSG="Probe > ERROR > Probe is not picked up"
+  M112 # Emergency stop
+  
+[gcode_macro PRINT_START]
+gcode:
+   ...
+   PROBE_ATTACH_CHECK ATTACHED="PROBE_ERROR_PICKED_UP"
+   
+   ... heating, etc goes here
+
+[gcode_macro PROBE_ERROR_PICKED_UP]
+gcode:
+  RESPOND PREFIX="error" MSG="Probe > ERROR > Probe is still attached!"
   M112 # Emergency stop
 ```
